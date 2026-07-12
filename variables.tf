@@ -7,6 +7,8 @@ Required:
     - location
     - name
     - password
+    - password_key_vault_id (alternative to password - read from Key Vault instead)
+    - password_key_vault_secret_name (alternative to password - read from Key Vault instead)
     - resource_group_name
     - username
 Optional:
@@ -23,15 +25,17 @@ Nested system_center_virtual_machine_manager_availability_sets (azurerm_system_c
 EOT
 
   type = map(object({
-    custom_location_id  = string
-    fqdn                = string
-    location            = string
-    name                = string
-    password            = string
-    resource_group_name = string
-    username            = string
-    port                = optional(number)
-    tags                = optional(map(string))
+    custom_location_id             = string
+    fqdn                           = string
+    location                       = string
+    name                           = string
+    password                       = string
+    password_key_vault_id          = optional(string)
+    password_key_vault_secret_name = optional(string)
+    resource_group_name            = string
+    username                       = string
+    port                           = optional(number)
+    tags                           = optional(map(string))
     system_center_virtual_machine_manager_availability_sets = optional(map(object({
       custom_location_id  = string
       location            = string
