@@ -12,12 +12,12 @@ locals {
 }
 
 module "system_center_virtual_machine_manager_servers" {
-  source                                        = "git::https://github.com/AeternaModules/azurerm_system_center_virtual_machine_manager_server.git?ref=v4.81.0"
+  source                                        = "git::https://github.com/AeternaModules/azurerm_system_center_virtual_machine_manager_server.git?ref=v5.0.0"
   system_center_virtual_machine_manager_servers = local.system_center_virtual_machine_manager_servers
 }
 
 module "system_center_virtual_machine_manager_availability_sets" {
-  source                                                  = "git::https://github.com/AeternaModules/azurerm_system_center_virtual_machine_manager_availability_set.git?ref=v4.81.0"
+  source                                                  = "git::https://github.com/AeternaModules/azurerm_system_center_virtual_machine_manager_availability_set.git?ref=v5.0.0"
   system_center_virtual_machine_manager_availability_sets = local.system_center_virtual_machine_manager_availability_sets
   depends_on                                              = [module.system_center_virtual_machine_manager_servers]
 }
